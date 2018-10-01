@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ACM狂热者</title>
+		<link rel="stylesheet" href="../css/allchoise0620.css" />
+		<script type="text/javascript" src="../js/ allchoise0620.js"></script>
+		<script>
+			function validform()
+			{
+				//获取参数
+				var uname=document.form1.uname.value;
+				if(uname==""||uname==null)
+				{
+					alert("用户名不能为空！")
+					document.form1.uname.focus();
+				}
+				
+				var upass=document.form1.upass.value;
+				if(upass==""||upass==null)
+				{
+					alert("密码不能为空！")
+					document.form1.upass.focus();
+				}
+			}
+		</script>
+	</head>
+	<body onload="today()">
+		<!--滚动广告-->
+		<div id="adv">
+			<img alt="广告" src="../img/guanggao1.png" width="150px" height="150px">
+		</div>
+		<div id="close" onclick="closeadv()">
+			<!--<img alt="close" src="../img/close.png"/>-->
+			<input id="close" type="button" value="X" onmouseover="this.className='redbtn'" onmouseout="this.className='whitebtn'"/>
+		</div>
+		<div id="header">
+			<form action="dologin.jsp" name="form1" method="get">
+				<div class="uname">
+					用户名：<input class="txt" type="text" name="uname" value="rj173" size="10" onmouseover="this.style.borderColor='red'" onmouseout="this.style.borderColor='black'"/>
+					密码：<input class="txt" type="password" name="upass" value="123456" size="10" onmouseover="this.style.borderColor='red'" onmouseout="this.style.borderColor='black'"/>
+					<input class="btn" type="button" value="登录" onclick="validform()" onmouseover="this.className='yellowbtn'" onmouseout="this.className='greenbtn'"/>
+					<a href="javascript:openwin()" onmouseover="this.style.fontSize='24px'" onmouseout="this.style.fontSize='12px'">用户注册</a>
+					<label id ="date"></label>	
+				</div>
+			</form>
+		</div>
+		<div id="nav">
+			<ul>
+				<li onmouseover="this.className='linkover'" onmouseout="this.className='linkout'">首页</li>
+				<li onmouseover="this.className='linkover'" onmouseout="this.className='linkout'">手机分类</li>
+				<li onmouseover="this.className='linkover'" onmouseout="this.className='linkout'">发现</li>
+				<li onmouseover="this.className='linkover'" onmouseout="this.className='linkout'">我的</li>
+			</ul>
+		</div>
+		<div id="body" style="border:1px solid #000;">
+			<!--<img alt="index" src="../img/guangao.png"/>-->
+			<table width="80%" rows="5" cols="3" border="1" style="margin: 10;">
+			<tr>
+				<th width="10%"><a href="javascript:allchoise(true)">全选</a>/<a href="javascript:allchoise(false)">取消</a></th>
+				<th>产品信息</th>
+				<th>产品价格</th>
+			</tr>	
+			<tr>
+				<td><input type="checkbox" name="cbkgroup"</td>
+				<td>Lenovo A123</td>
+				<td>￥10000.0</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="cbkgroup"</td>
+				<td>Macbook pro A123</td>
+				<td>￥10000.0</td>
+			</tr>
+			</table>
+		</div>
+	</body>
+</html>
